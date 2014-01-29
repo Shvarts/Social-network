@@ -7,9 +7,12 @@ class User < ActiveRecord::Base
 
 	validates :email,	  :presence => true,
 						  :length => {:in => 2..250},
-						  :uniqueness => true,
+						  :uniqueness => true
 						  :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
 	validates :password,  :presence => true,
 						  :length => {:within => 6..40}
+
+	attr_accessible :firstname, :lastname, :email, :password, :avatar
+	has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/images/missing_avatar.png"
 end
