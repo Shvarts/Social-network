@@ -12,21 +12,28 @@
  *= require_tree .
  */
  .header {
+	background-image:url("grey_header_web_retina.jpg");
+	position: fixed;
+	width: 100%;
+	height: 35;
+}
+.panel{
 	margin:0 auto;
-	width: 1000px;
-	height: 150;
-	background-color: #99F;	
-	border-radius: 15px 15px 0px 0px;
+	width: 900px;
+	height: 35;
+	background-color: #f22;	
 }
- .laym {
-	float: left;
-	margin:0px 25px;
-	width: 150px;
-	height: 150px;
-	background-color: #ff0;	
-	border-radius: 12% 60%;
+.elbc{
+font-family: arial;
+font-size:14px;
+padding: 10px 0px 0px;
+text-align: center;
+float: left;
+display: block;
+width: 90px;
+height: 30px;
 }
- .laym_prod {
+.laym_prod {
 	padding: 50px 50px;
 	font-family: arial;
 	font-size: 50px;
@@ -35,27 +42,39 @@
 	height: 50px;
 }
 .sidebar_d {
-    display: block;
-	clear: both;
-    margin:0 auto;
-	width: 1000px;
+	background-color: rgba(255, 255, 255, 0.5);
+    margin:40px auto 0;
+	padding: 0;
+	width: 900px;
 	}
-.sidebar {
-	width: 20%;
+.sidebar_1 {
+	padding: 5px;
+	padding-left:20px;
+	width: 270px;
 	float: left;
 }
-.elb{
-	display: block;
+.sidebar_2 {
+	padding: 2px 5px 2px 2px;
+	width: 593px;
+	float: right;
 }
-.container{
-border-left: 6px solid #000;
-width: 794px;
-margin:0px 200px;
+.clr{
+clear: both;
+}
+.oblako {
+	border-radius:15px;
+	background-color: #fff;
+	display: block;
+	margin:1% auto;
+	padding: 15px;
+	width: 90%;
+	clear: both;
+	margin-bottom: 10px;
 }
 .footer {
-	margin:0% auto 0px auto;
-	width: 1000px;
-	height: 10%;
-	clear: both;
-	background-color: #f02;	
+	text-align:center;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin:0 auto 0;
+	width: 900px;
+	border-radius: 0px 0px 15px 15px;
 }

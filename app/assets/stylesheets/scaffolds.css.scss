@@ -1,6 +1,11 @@
 body {
+
   margin:0;
-  background-color: #ccf;
+  background-image:url(q.jpeg) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -20,13 +25,12 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #999;
   &:visited {
     color: #666;
   }
   &:hover {
     color: #fff;
-    background-color: #44f;
   }
 }
 
