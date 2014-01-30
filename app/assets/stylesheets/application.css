@@ -11,25 +11,63 @@
  *= require_self
  *= require_tree .
  */
- .lol{
+ .header{
+ font-size:50px;
  text-align:center;
  background-color: #F8F8FF;
+ border-radius:0px 0px 50px 50px;
  width:1000px;
  height:200px;
  margin:0 auto;
  }
- t{
+ .t{
 color: #FFA500;
 text-align:center;
 font-size:35px;
  }
+ .t2{
+ text-decoration: #FFFAFA;
+ }
 .l{
  background-color: #696969;
+ border-radius:80px 80px 80px 80px;
+ width:60%;
+ height:500px;
+ float:left;
+ margin-left:15px;
+ text-align:center;
+ font-size:25px;
+ color:#F8F8FF;
+}
+.l2{
+ background-color: #6495ED;
+ border-radius:80px 80px 80px 80px;
+ width:35%;
+ height:500px;
+ float:right;
+ text-align:center;
+ font-size:25px;
+  color:#F8F8FF;
+}
+.lh{
+background-color: #696969;
+color:#FFFAFA;
  width:80%;
  float:left;
 }
-.q{
- background-color: #6495ED;
+.lh2{
+ background-color: #696969;
+ color:#FFFAFA;
  width:20%;
  float:right;
+ font-size:30px;
+}
+.f{
+background-color:#000000;
+color:#FFFFFF;
+width:85%;
+height:150px;
+margin:500px auto;
+border-radius:100px 100px 100px 100px;
+text-align:center;
 }
