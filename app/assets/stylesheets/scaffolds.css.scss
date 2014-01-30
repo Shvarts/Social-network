@@ -1,11 +1,10 @@
 body {
-
-  margin:0;
-  background-image:url(q.jpeg) ;
+  margin:0px;
+  background-image:url(3.jpg) ;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -30,6 +29,7 @@ a {
     color: #666;
   }
   &:hover {
+	background-color: #000;
     color: #fff;
   }
 }
