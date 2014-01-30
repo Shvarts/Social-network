@@ -8,8 +8,8 @@ development:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: "12345"
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -20,8 +20,8 @@ test:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: "12345"
   host: 127.0.0.1
 
 production:
@@ -29,6 +29,6 @@ production:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: "12345"
   host: 127.0.0.1
