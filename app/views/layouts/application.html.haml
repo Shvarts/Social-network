@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title= full_title(yield(:title))
+    = stylesheet_link_tag "application", media: "all", 
+      "data-turbolinks-track" => true                  
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  %body
+    .header
+      .panel
+        %a.elbc
+          Главная
+        %a.elbc
+          На связи
+        %a.elbc
+          В курсе
+      .clr
+    .sidebar_d
+      .sidebar_1
+        .oblako
+          sidebar
+      = yield
+    .footer
+      %b footer
