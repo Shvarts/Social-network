@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	validates :email,	  :presence => true,
 						  :length => {:in => 2..250},
 						  :uniqueness => true,
-						  :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+						  :format => {:with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
 
 	validates :password,  :presence => true,
 						  :length => {:within => 6..40}
