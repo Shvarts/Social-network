@@ -11,7 +11,26 @@
  *= require_self
  *= require_tree .
  */
- .header {
+body {
+  margin:0px;
+  background-color: #C0DEED;
+  background-image:url(bg.png) ;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+a {
+  color: #999;
+}
+a:hover {
+	background-color: #000;
+    color: #fff;
+}
+.header {
 	background-image:url("grey_header_web_retina.jpg");
 	position: fixed;
 	top:0px;
@@ -25,14 +44,14 @@
 	height: 35px;
 }
 .elbc{
-font-family: arial;
-font-size:14px;
-padding: 10px 0px 0px;
-text-align: center;
-float: left;
-display: block;
-width: 90px;
-height: 25px;
+	font-family: arial;
+	font-size:14px;
+	padding: 10px 0px 0px;
+	text-align: center;
+	float: left;
+	display: block;
+	width: 90px;
+	height: 25px;
 }
 .sidebar_d {
 	background-color: rgba(255, 255, 255, 0.3);
@@ -52,7 +71,7 @@ height: 25px;
 	float: right;
 }
 .clr{
-clear: both;
+	clear: both;
 }
 .oblako {
 	border-radius:15px;
