@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+ .lol{
+ text-align:center;
+ background-color: #f52;
+ width:1000px;
+ height:200px;
+ margin:0 auto;
+ }
+ t{
+color: #a45;
+text-align:center;
+font-size:35px;
+ }
+.l{
+ background-color: #f12;
+ width:80%;
+ float:left;
+}
+.q{
+ background-color: #f87;
+ width:20%;
+ float:right;
+}
