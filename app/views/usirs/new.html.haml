@@ -1,0 +1,22 @@
+.sidebar_2
+  .oblako
+    = form_for :@user, url: usirs_path do |f|
+      %p
+        = f.label :Name
+        %br
+        = search_field(:user, :firstname)
+      %p
+        = f.label :Lastname
+        %br
+        = search_field(:user, :lastname)
+      %p  
+        = f.label :Email
+        %br
+        = email_field(:user, :email)
+      %p  
+        = f.label :Password
+        %br
+        = password_field_tag(:uwer, :password)
+      %p
+        = f.submit
+.clr

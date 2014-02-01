@@ -25,11 +25,13 @@ body {
 }
 a {
   color: #999;
+  text-decoration: none;
 }
 a:hover {
 	background-color: #000;
     color: #fff;
 }
+
 .header {
 	background-image:url("grey_header_web_retina.jpg");
 	position: fixed;
@@ -89,4 +91,8 @@ a:hover {
 	margin:0 auto 0;
 	width: 900px;
 	border-radius: 0px 0px 15px 15px;
+}
+.Sign_up{
+
+	
 }
