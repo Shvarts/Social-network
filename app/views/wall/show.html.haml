@@ -1,0 +1,8 @@
+%p
+  %strong Title:
+  = @post.title
+%p
+  %strong Content:
+  = @post.content
+  = link_to 'Back', wall_index_path
+|   #{link_to 'Edit', edit_wall_path(@post)}

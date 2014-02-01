@@ -1,10 +1,12 @@
 SocialNetworc::Application.routes.draw do
   get "wall/index"
+  post "wall/new" => "wall#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
+  resources :wall
+  
   resources :users 
   
   root 'wall#index'
