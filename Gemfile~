@@ -10,7 +10,7 @@ gem 'mysql2'
 gem 'paperclip'
 
 gem 'haml-rails'
-gem 'protected_attributes'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
