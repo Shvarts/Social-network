@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129123539) do
+ActiveRecord::Schema.define(version: 20140203023016) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20140129123539) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "walls", force: true do |t|
+    t.string   "post"
+    t.integer  "usr"
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

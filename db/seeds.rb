@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do |u|
+  4.times do |i|
+    Wall.create(usr: "user #{u}", post: "Very interesting post. Number #{i}.")
+  end
+end
