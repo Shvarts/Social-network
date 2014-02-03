@@ -8,8 +8,8 @@ development:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: "Z1921681010"
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
