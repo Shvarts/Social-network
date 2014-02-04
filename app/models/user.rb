@@ -1,5 +1,4 @@
-class User < ActiveRecord::Base
-	attr_accessible :firstname , :lastname , :password , :email  
+class User < ActiveRecord::Base 
 	validates :firstname, :presence => true,
 			 			  :length => {:in => 2..20}
 

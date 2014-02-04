@@ -1,22 +1,22 @@
 .sidebar_2
   .oblako
-    = form_for :@user, url: users_path do |f|
+    = form_for @user do |f|
       %p
         = f.label :Name
         %br
-        = search_field(:user,:firstname)
+        = f.text_field :firstname
       %p
         = f.label :Lastname
         %br
-        = search_field(:user,:lastname)
+        = f.text_field :lastname
       %p  
         = f.label :Email
         %br
-        = email_field(:user,:email)
+        = f.email_field :email 
       %p  
         = f.label :Password
         %br
-        = password_field(:user,:password)
+        = f.password_field :password
       %p
-        = f.submit
+        = f.submit "Sing up"
 .clr
