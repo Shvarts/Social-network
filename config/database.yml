@@ -9,7 +9,7 @@ development:
   pool: 5
   timeout: 5000
   username: root
-  password: "23141989"
+  password: ""
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -21,7 +21,7 @@ test:
   pool: 5
   timeout: 5000
   username: root
-  password: "23141989"
+  password: ""
   host: 127.0.0.1
 
 production:
@@ -30,5 +30,5 @@ production:
   pool: 5
   timeout: 5000
   username: root
-  password: "23141989"
+  password: ""
   host: 127.0.0.1

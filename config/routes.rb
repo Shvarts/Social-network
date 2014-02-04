@@ -1,6 +1,6 @@
 SocialNetworc::Application.routes.draw do
   get "wall/index"
-  resources :usirs
+  resources :users
   #get '/creat', to: 'creat#index' , as: 'sign_up'
 
   # The priority is based upon order of creation: first created -> highest priority.
