@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  created_at: 2014-02-05 15:30:29
+  ip: MyString
+  browser_name: MyString
+  browser_version: MyString
+  os_name: MyString
+  os_version: MyString
+  devise_type: 1
+
+two:
+  id: 1
+  created_at: 2014-02-05 15:30:29
+  ip: MyString
+  browser_name: MyString
+  browser_version: MyString
+  os_name: MyString
+  os_version: MyString
+  devise_type: 1
