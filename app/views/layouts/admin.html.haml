@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title SocialNetworc
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .header
+      %t RUBY
+      .lh
+        ADMIN
+      .lh2
+        ON_RAILS
+    %br
+    %br
+    %br
+    .l
+      Information
+    .l2
+      Users
+    %br
+    .f
+      About Something
+    = yield
