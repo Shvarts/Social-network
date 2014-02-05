@@ -1,0 +1,22 @@
+.sidebar_2
+  .oblako
+    = form_for @user do |f|
+      %p
+        = f.label :Name
+        %br
+        = f.text_field :firstname
+      %p
+        = f.label :Lastname
+        %br
+        = f.text_field :lastname
+      %p  
+        = f.label :Email
+        %br
+        = f.email_field :email 
+      %p  
+        = f.label :Password
+        %br
+        = f.password_field :password
+      %p
+        = f.submit "Sing up"
+.clr

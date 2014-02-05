@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require modal
  */
 body {
   margin:0px;
@@ -25,11 +26,13 @@ body {
 }
 a {
   color: #999;
+  text-decoration: none;
 }
 a:hover {
 	background-color: #000;
     color: #fff;
 }
+
 .header {
 	background-image:url("grey_header_web_retina.jpg");
 	position: fixed;

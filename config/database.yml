@@ -20,8 +20,8 @@ test:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: ""
   host: 127.0.0.1
 
 production:
@@ -29,6 +29,6 @@ production:
   database: socnetdb
   pool: 5
   timeout: 5000
-  username: username
-  password: "password"
+  username: root
+  password: ""
   host: 127.0.0.1
