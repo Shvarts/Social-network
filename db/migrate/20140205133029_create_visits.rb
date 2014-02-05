@@ -1,8 +1,8 @@
 class CreateVisits < ActiveRecord::Migration
   def change
     create_table :visits do |t|
-      t.integer :id
-      t.datetime :created_at
+     
+      
       t.string :ip
       t.string :browser_name
       t.string :browser_version
