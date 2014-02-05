@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base 
 	validates :firstname, :presence => true,
 			 			  :length => {:in => 2..20}
 
