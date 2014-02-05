@@ -1,15 +1,15 @@
 SocialNetworc::Application.routes.draw do
-	
- # get "wall/index"
+
+  get "wall/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'wall#index'
-	
+
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  root 'sessions#index'
+  root 'wall#index'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
