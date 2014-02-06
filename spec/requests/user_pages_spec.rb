@@ -8,7 +8,7 @@ describe "UserPages" do
 	  
       describe "after saving the user" do
       before { click_button submit }
-      let(:user) { User.find_by(email: 'user@example.com') }
+      let(:users) { Users.find_by(email: 'user@example.com') }
 
       end
 
