@@ -34,7 +34,7 @@ class WallController < ApplicationController
         @post = Post.find(params[:id])
   	    @post.destroy
  
-        redirect_to wall_url(@post)
+        redirect_to action: :index
 	end
 
 

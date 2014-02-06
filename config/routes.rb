@@ -6,8 +6,9 @@ SocialNetworc::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :wall
-  
+  resources :wall do
+    resources :posts
+  end
   resources :users 
   
   root 'wall#index'

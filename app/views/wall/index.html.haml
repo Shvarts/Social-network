@@ -5,10 +5,9 @@
     %th content
   - @posts.each do |post|
     %tr
-      %td= post.title
+      %td= link_to post.title, wall_path(post)
       %td= post.content
-      %td= link_to 'Show', wall_path(post)
-      %td= link_to 'Edit', edit_wall_path(post)
-      %td= link_to 'Destroy', wall_path(post)                 |
+      %td= link_to( image_tag("edit.png"), edit_wall_path(post))
+      %td= link_to( image_tag("del.png"),  "/wall/#{post.id}", :confirm => 'Are you sure?', :method => :delete)
   = link_to 'New Post', new_wall_path
 
