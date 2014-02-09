@@ -1,6 +1,7 @@
 .sidebar_2
   .oblako
-    form
+    #fo
+      form
     =form_tag(wall_index_path, method: "post", remote: true, :id => 'walllist_form_ajax') do
       =text_field_tag(:q)
       =submit_tag("Search")
