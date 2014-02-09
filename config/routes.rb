@@ -1,8 +1,8 @@
 SocialNetworc::Application.routes.draw do
   get "users/profile"
   get "wall/index"
-  post "wall/index" => "wall#test"
-  get "wall/test" => "wall#test"
+  post "wall/index" => "wall#walllist_ajax"
+  #get "wall/test" => "wall#test"
   resources :users ,only: [:new, :create, :profile]
   
   # The priority is based upon order of creation: first created -> highest priority.

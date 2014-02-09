@@ -2,12 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
-  $("#asdf").on("ajax:success", (e, data, status, xhr) ->
-    obj = $.parseJSON(xhr.responseText)
-    $("#qa").text ""
-    i = 0
-    while i <= obj.length
-      $("#qa").append obj[i].usr + " - " + obj[i].post + "<br>"
-      i++
+  $("#walllist_form_ajax").on("ajax:success", (e, data, status, xhr) ->
+    $("#walllist_answer_ajax").html xhr.responseText
   ).bind "ajax:error", (e, xhr, status, error) ->
-    $("#qa").text "<p>ERROR</p>"
+    $("#walllist_answer_ajax").html "<p>ERROR: "+error+"</p>"

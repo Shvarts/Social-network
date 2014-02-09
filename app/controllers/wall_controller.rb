@@ -1,15 +1,12 @@
 class WallController < ApplicationController
   def index
     @wallList = Wall.all
-	puts "here!!!!!!!!!"
   end
   
-  def test
+  def walllist_ajax
     @wallList = Wall.where("`post` LIKE ?", params[:q]+"%")
-	render json: @wallList
-    #respond_to do |format|
-	#  format.json { render json: @wallList, status: :serached, location: @wallList }
-	#end
+	render :partial => 'walllist_ajax'
+	#render json: @wallList
   end
   
 end
