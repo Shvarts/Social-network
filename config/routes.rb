@@ -1,13 +1,18 @@
 SocialNetworc::Application.routes.draw do
+  get "password_resets/new"
   get "wall/index"
   resources :users ,only: [:new, :create]
-  
+  resources :users
+  resources :sessions ,only: [:new, :create, :destroy]
+  resources :password_resets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'wall#index'
+
+  match '/signin', to: 'sessions#new',     via: 'get'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
