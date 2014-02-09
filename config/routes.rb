@@ -1,5 +1,15 @@
 SocialNetworc::Application.routes.draw do
-  get "wall/index"
+  # get "users/index"
+  post "admin/users/create"
+  # get "users/show"
+  # get "users/delete"
+  # get "users/update"
+  # get "wall/index"
+
+  namespace :admin do
+    resources :users
+  end
+
   resources :users ,only: [:new, :create]
   
 
