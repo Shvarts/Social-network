@@ -12,7 +12,12 @@ private
 		device = ua.device
 		visit = Visit.create(ip: request.ip, browser_name: browser.name,  
 			browser_version: browser.version.to_s, os_name: os.name, os_version: os.version.to_s, devise_type: device.type)
-	end
+  end
+
+  def current_user
+    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
+  end
+
 
 end
 
