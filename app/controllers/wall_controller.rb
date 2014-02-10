@@ -12,6 +12,7 @@ class WallController < ApplicationController
 
    def show
 	  	@post = Post.find(params[:id])
+      redirect_to action: :index
 	end
 	
 	def edit
