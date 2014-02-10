@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "remember_token"
   end
 
   create_table "visits", force: true do |t|
@@ -47,5 +48,7 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.integer  "devise_type"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
