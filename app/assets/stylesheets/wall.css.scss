@@ -1,3 +1,51 @@
 // Place all the styles related to the Wall controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_post a {
+	color: black;
+}
+.posts{
+    display: inline-block;
+	border-radius: 15px 15px 15px 15px;
+    background-color: rgba(255, 255, 255, 1); 
+    *display: inline;
+}
+.post_body ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom:1;
+    *display: inline;
+    border-bottom: 1px solid #E1E8ED; 
+}
+.post_body p {
+    float: left;
+    padding: 0px 5px;
+}
+.post_photo p {
+	float: left;
+	border-radius: 15px 15px 15px 15px;
+}
+.post_content p {
+    float: left;	
+}
+
+.post_title p {
+    float: left;		
+}
+.icons{
+	padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 450px;	
+}
+
+.icons a:hover {
+	color: rgba(255, 255, 255, 0);
+}
+
+.title{
+	font-size: bold;
+}

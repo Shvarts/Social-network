@@ -2,16 +2,23 @@ SocialNetworc::Application.routes.draw do
 
   get "wall/index"
   resources :users ,only: [:new, :create]
+
   get 'profile' => 'users#profile'
 
   namespace :admin do 
 		get '/', to: 'pages#index' 
   end
 
+  post "wall/new" => "wall#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  resources :wall do
+    resources :posts
+  end
+
   root 'wall#index'
 
   # Example of regular route:
