@@ -38,13 +38,21 @@ ActiveRecord::Schema.define(version: 20140205133029) do
   end
 
   create_table "visits", force: true do |t|
-    t.datetime "created_at"
     t.string   "ip"
     t.string   "browser_name"
     t.string   "browser_version"
     t.string   "os_name"
     t.string   "os_version"
     t.integer  "devise_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "walls", force: true do |t|
+    t.string   "post"
+    t.integer  "usr"
+    t.string   "date"
+    t.datetime "created_at"
     t.datetime "updated_at"
   end
 

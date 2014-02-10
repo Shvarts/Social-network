@@ -15,13 +15,26 @@
       .n2
         New_ user
     .l2
-      Users
-      .u1
-        User_1
-        .t3
-          Information
-        .t1
-          User_name
-        .t2
-          Password
+      .tabs
+        <!-- Это сами вкладки -->
+        %ul.tabNavigation
+          %li
+            = link_to "users_srch", "#users_srch_c", class:""
+          %li
+            = link_to "Password", "#Password", class:""
+          %li
+            = link_to "Information", "#third", class:""
+        <!-- Это контейнеры содержимого -->    
+        #users_srch_c
+          = form_for :user do |f|
+            %p
+              = f.label :search
+              %br
+              = f.text_field :search 
+          #users_srch
+            = render partial: "users/user_list"
+        #Password
+          Nil 
+        #third
+          Nil       
     = yield

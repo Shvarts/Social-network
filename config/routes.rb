@@ -3,9 +3,11 @@ SocialNetworc::Application.routes.draw do
   get "wall/index"
   resources :users ,only: [:new, :create]
   get 'profile' => 'users#profile'
+  post 'user_search' => 'admin/pages#user_search' 
+  
 
   namespace :admin do 
-		get '/', to: 'pages#index' 
+		get '/', to: 'pages#index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

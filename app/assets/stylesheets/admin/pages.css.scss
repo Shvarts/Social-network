@@ -4,9 +4,8 @@
 .header{
   font-size:25px;
   background-color: #FFF8DC;
-  border-radius:5px 5px 5px 5px;
   width:100%;
-  height:50px;
+  height:35px;
   margin:0 auto;
 }
 .l{
@@ -35,48 +34,34 @@
 
 .l2{
   background-color: #F5FFFA;
-  margin-top: 25px;
-  border-radius:25px 25px 25px 25px;
+  margin-top: 35px;
+  border-radius:0px;
   width:70%;
   float:right;
-  text-align:center;
-  font-size:25px;
+  font-size:14px;
   color:#000000;
 }
-.u1{
-  background-color: #EEE8AA;
-  border-radius:15px 15px 15px 15px;
-  width:95%;
-  height:115px ;
-  margin:15px auto;
-  text-align: center;
-  font-size:20px;
-  color:#000000;
-}
-.t1{
-  background-color:#B0C4DE;
-  margin-top: 4%;
-  float: left;
-  margin-left:3%;
-  width:25%;
-  height: 50px;
-  border-radius:15px 15px 15px 15px;
-}
-.t2{
-  background-color:#B0C4DE;
-  margin-left:29%;
-  margin-top: 1.5%;
-  width:25%;
-  height: 50px;
-  border-radius:15px 15px 15px 15px;
-}
-.t3{
 
-  background-color:#B0C4DE;
-  margin-top: 4%;
-  float: right;
-  margin-right:3%;
-  width:42%;
-  height: 50px;
-  border-radius:15px 15px 15px 15px;
+ul.tabNavigation {
+list-style: none;
+margin: 0;
+padding: 0;
 }
+
+ul.tabNavigation li {
+display: inline;
+}
+
+ul.tabNavigation li a {
+padding: 3px 9px;
+background-color: #666;
+color: #000;
+text-decoration: none;
+}
+
+ul.tabNavigation li a.selected,
+ul.tabNavigation li a.selected:hover {
+background: #ddd;
+color: #000;
+}
+
