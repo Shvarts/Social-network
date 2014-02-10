@@ -1,0 +1,25 @@
+.sidebar_2
+  .oblako
+    %h1 Editing post
+    = form_for :post, url: wall_path(@post), method: :patch do |f|
+      - if @post.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@post.errors.count, "error")
+            prohibited
+            this post from being saved:
+          %ul
+            - @post.errors.full_messages.each do |msg|
+              %li= msg
+      %p
+        = f.label :title
+        %br
+        = f.text_field :title
+      %p
+        = f.label :content
+        %br
+        = f.text_area :content
+      %p
+        = f.submit
+    = link_to 'Back', wall_index_path
+.clr
