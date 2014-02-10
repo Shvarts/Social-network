@@ -11,12 +11,17 @@
   %body
     .header
       .panel
-        %a.elbc
-          = link_to 'Home', root_path
-        %a.elbc
-          = link_to 'Profile', profile_path
-        %a.elbc
-          = link_to 'Sign in',signin_path
+        = link_to 'Home', root_path, class:"elbc"
+        = link_to 'Profile', profile_path, class:"elbc"
+        = link_to 'Sign in',signin_path, class:"elbc"
+        #user-widget
+          - if current_user
+            Welcome
+            = succeed "!" do
+              %strong= current_user.name
+            = link_to "Sign out", signout_path, id: "sign_out"
+          - else
+            = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
       .clr
     .sidebar_d
       .sidebar_1
