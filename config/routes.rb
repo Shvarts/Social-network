@@ -1,7 +1,9 @@
 SocialNetworc::Application.routes.draw do
+
+
   get "wall/index"
   resources :users ,only: [:new, :create]
-  
+  get 'profile' => 'users#profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
