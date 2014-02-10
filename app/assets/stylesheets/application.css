@@ -12,6 +12,7 @@
  *= require_tree .
  *= require modal
  */
+
 body {
   margin:0px;
   background-color: #C0DEED;
@@ -93,3 +94,4 @@ a:hover {
 	width: 900px;
 	border-radius: 0px 0px 15px 15px;
 }
+
