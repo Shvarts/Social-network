@@ -2,6 +2,7 @@ SocialNetworc::Application.routes.draw do
   get "users/profile"
   get "wall/index"
   post "wall/index" => "wall#walllist_ajax"
+  get "users/accept/:token" => "users#accept_email"
   #get "wall/test" => "wall#test"
   resources :users ,only: [:new, :create, :profile]
   
