@@ -3,7 +3,7 @@
   %head
     %title= full_title(yield(:title))
     = stylesheet_link_tag "application", media: "all", 
-      "data-turbolinks-track" => true                  
+      "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     /[if lt IE 9]
@@ -12,13 +12,13 @@
     .header
       .panel
         %a.elbc
-          Главная
+          = link_to 'Home', root_path
         %a.elbc
-          На связи
+          = link_to 'Profile', profile_path
         %a.elbc
           В курсе
         = link_to 'Sing up', new_user_path , class:"elbc"
-        = link_to 'Sing in', signin_path , class:"elbc"
+          = link_to 'Sign in',signin_path , class: "elbc"
       .clr
     .sidebar_d
       .sidebar_1

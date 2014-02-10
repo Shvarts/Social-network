@@ -1,5 +1,14 @@
-.sidebar_2
-  .oblako
-    body
-.clr
-	
+%h1 Listing posts
+.new_post
+  = link_to( image_tag("tweet.png", :size => "50x50"), new_wall_path)
+.posts
+  - @posts.each do |post|
+    .post_body
+      %ul
+        %p.post_photo= image_tag(post.photo, :size => "50x50")      
+        %p.post_title= link_to post.title, wall_path(post)
+        %p.post_content= post.content
+        .icons
+          = link_to( image_tag("edit.png", :size => "22x22"), edit_wall_path(post))
+          = link_to( image_tag("del.png", :size => "22x22"),  "/wall/#{post.id}", :confirm => 'Are you sure?', :method => :delete)
+

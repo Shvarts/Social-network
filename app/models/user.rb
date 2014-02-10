@@ -1,21 +1,36 @@
-class User < ActiveRecord::Base 
-	validates :firstname, :presence => true,
-			 			  :length => {:in => 2..20}
+class User < ActiveRecord::Base
 
-	validates :lastname,  :presence => true,
-						  :length => {:in => 2..20}
+  validates :firstname, :presence => true,
+            :length => {:in => 2..20}
 
-	validates :email,	  :presence => true,
-						  :length => {:in => 2..250},
-						  :uniqueness => true,
-						  :format => {:with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
+  validates :lastname,  :presence => true,
+            :length => {:in => 2..20}
 
-	validates :password,  :presence => true,
-						  :length => {:within => 6..40}
+  validates :email,	  :presence => true,
+            :length => {:in => 2..250},
+            :uniqueness => true,
+            :format => {:with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
 
-	has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/images/missing_avatar.png"
+  validates :password,  :presence => true,
+            :length => {:within => 6..40}
 
-  before_create { generate_token(:auth_token) }
+  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/images/missing_avatar.png"
+
+  before_save { self.email = email.downcase }
+  before_create :create_remember_token
+  def User.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def User.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+
+    def create_remember_token
+      self.remember_token = Users.encrypt(Users.new_remember_token)
+    end
 
   def send_password_reset
     generate_token(:password_reset_token)
@@ -29,5 +44,4 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
-
 end
