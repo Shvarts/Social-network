@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(user_params)
 		if @user.save
+
 		    UserMailer.registration_confirmation(@user).deliver
 			redirect_to "/"
 		else
@@ -28,5 +29,6 @@ class UsersController < ApplicationController
   		def user_params
     		params.require(:user).permit(:firstname, :lastname, :email, :password, :token)
   		end
+
 
 end

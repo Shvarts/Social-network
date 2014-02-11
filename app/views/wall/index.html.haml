@@ -1,9 +1,9 @@
-.sidebar_2
-  .oblako
-    #fo
-      form
-    =form_tag(wall_index_path, method: "post", remote: true, :id => 'walllist_form_ajax') do
-      =text_field_tag(:q)
-      =submit_tag("Search")
-    =render :partial => 'walllist_ajax'
-.clr
+%h1 Listing posts
+.new_post
+  = link_to( image_tag("tweet.png", :size => "50x50"), new_wall_path)
+.posts
+  =form_tag(wall_index_path, method: "post", remote: true, :id => 'walllist_form_ajax') do
+    =text_field_tag(:q)
+    =submit_tag("Search")
+  =render :partial => 'walllist_ajax'
+
