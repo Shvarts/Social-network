@@ -10,7 +10,7 @@ development:
   timeout: 5000
   username: root
 
-  password: "Z1921681010"
+  password: ""
 
   host: 127.0.0.1
 
