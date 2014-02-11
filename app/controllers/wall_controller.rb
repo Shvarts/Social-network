@@ -8,9 +8,9 @@ class WallController < ApplicationController
     	@post = Post.new(post_params)
 		  @post.save
   		redirect_to wall_url(@post)
-    end
+  end
 
-   def show
+  def show
 	  	@post = Post.find(params[:id])
 	end
 	
@@ -19,7 +19,7 @@ class WallController < ApplicationController
 	end
 
 	def update
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
 
     if  @post.update(post_params)
         redirect_to wall_url(@post)
@@ -38,9 +38,10 @@ class WallController < ApplicationController
 	end
 
 
-    private
-    def post_params
-    	params.require(:post).permit(:title, :content)
-    end
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 
 end

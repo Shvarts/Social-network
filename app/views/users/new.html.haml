@@ -1,5 +1,8 @@
 .sidebar_2
   .oblako
+    -@user.errors.full_messages.each do |msg| 
+      %p 
+        = msg
     = form_for @user do |f|
       %p
         = f.label :Name
@@ -17,6 +20,10 @@
         = f.label :Password
         %br
         = f.password_field :password
+      %p  
+        = f.label :Password_confirmation
+        %br
+        = f.password_field :password_confirmation
       %p
         = f.submit "Sing up"
 .clr
