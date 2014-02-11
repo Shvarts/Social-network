@@ -1,16 +1,35 @@
 SocialNetworc::Application.routes.draw do
-  get "users/profile"
+
   get "wall/index"
   post "wall/index" => "wall#walllist_ajax"
-  #get "wall/test" => "wall#test"
+  get "users/accept/:token" => "users#accept_email"
   resources :users ,only: [:new, :create, :profile]
   
+
+  get 'profile' => 'users#profile'
+
+  namespace :admin do 
+		get '/', to: 'pages#index' 
+  end
+
+  post "wall/new" => "wall#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  resources :wall do
+    resources :posts
+  end
+
   root 'wall#index'
 
+
+  #resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -60,3 +79,4 @@ SocialNetworc::Application.routes.draw do
   #     resources :products
   #   end
 end
+
