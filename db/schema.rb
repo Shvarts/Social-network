@@ -37,12 +37,4 @@ ActiveRecord::Schema.define(version: 20140203023016) do
     t.datetime "avatar_updated_at"
   end
 
-  create_table "walls", force: true do |t|
-    t.string   "post"
-    t.integer  "usr"
-    t.string   "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
