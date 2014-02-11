@@ -11,10 +11,25 @@
   %body
     .header
       .panel
-        = link_to 'Home', root_path, class:"elbc"
-        = link_to 'Profile', profile_path, class:"elbc"
-        = link_to 'Sign up', new_user_path, class:"elbc"
-        = link_to 'Sign in',signin_path, class:"elbc"
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => ".bs-js-navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar 
+            %span.icon-bar 
+            %span.icon-bar 
+          = link_to "Home", root_path, class:"elbc"
+        .navbar-collapse.bs-js-navbar-collapse.collapse{style: "height: 1px;"}
+          %ul.nav.navbar-nav
+            -if false
+              %li
+                = link_to "Profile", profile_path , class:"boot"
+              %li
+                = link_to "Sing out", "#" , class:"boot"
+            -else
+              %li
+                = link_to "Sing in", new_session_path , class:"boot"
+              %li
+                = link_to "Sing up", new_user_path , class:"boot"
+        
       .clr
     .sidebar_d
       .sidebar_1
