@@ -21,6 +21,21 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 
+ROLES = %w[admin user guest banned]
+
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+  end
+
+  def roles
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
+  end
+
+  def role?(role)
+    roles.include? role.to_s
+  end
+  
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -32,7 +47,7 @@ class User < ActiveRecord::Base
   private
 
   def create_remember_token
-    self.remember_token = Users.encrypt(Users.new_remember_token)
+    self.remember_token = User.encrypt(User.new_remember_token)
   end
 
 end

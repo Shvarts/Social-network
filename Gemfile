@@ -12,6 +12,8 @@ gem 'agent_orange'
 
 gem 'mysql2'
 
+gem "cancan"
+
 gem 'paperclip'
 
 gem 'haml-rails'
