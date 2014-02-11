@@ -1,35 +1,27 @@
 SocialNetworc::Application.routes.draw do
 
   get "wall/index"
-<<<<<<< HEAD
-  resources :users ,only: [:new, :create]
 
+  resources :users ,only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :wall do
+    resources :posts
+  end
+  
   get 'profile' => 'users#profile'
+  post "wall/new" => "wall#create"
+
 
   namespace :admin do 
 		get '/', to: 'pages#index' 
   end
 
-  post "wall/new" => "wall#create"
-=======
->>>>>>> Login
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
-  resources :wall do
-    resources :posts
-  end
 
-  root 'wall#index'
-=======
->>>>>>> Login
-
-
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  
   root 'wall#index'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

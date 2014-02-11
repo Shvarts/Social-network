@@ -1,0 +1,8 @@
+- if false
+  = link_to 'Home', root_path, class:"elbc"
+  = link_to 'Sign in',signin_path, class:"elbc"
+  = link_to 'Sign up',new_user_path, class:"elbc"
+- else
+  = link_to 'Home', root_path, class:"elbc"
+  = link_to 'Sign out',"#", class:"elbc"
+  = link_to 'Profile',profile_path, class:"elbc"
