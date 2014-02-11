@@ -1,0 +1,7 @@
+-@users.each do |user|
+  = link_to 'view', profile_path
+  = link_to 'delet', "#"
+  =user.firstname 
+  .clr
+-if @users.blank? 
+  Немае совпадений!!!

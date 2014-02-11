@@ -6,9 +6,11 @@ SocialNetworc::Application.routes.draw do
   resources :users ,only: [:new, :create]
 
   get 'profile' => 'users#profile'
+  post 'user_search' => 'admin/pages#user_search' 
+  
 
   namespace :admin do 
-		get '/', to: 'pages#index' 
+		get '/', to: 'pages#index'
   end
 
   resources :wall do

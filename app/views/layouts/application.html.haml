@@ -11,14 +11,10 @@
   %body
     .header
       .panel
-        %a.elbc
-          = link_to 'Home', root_path
-        %a.elbc
-          = link_to 'Профиль', profile_path, class:"elbc"
-        %a.elbc
-          = link_to 'Profile', profile_path
-        %a.elbc
-          = link_to 'Sign in',signin_path
+        = link_to 'Home', root_path, class:"elbc"
+        = link_to 'Profile', profile_path, class:"elbc"
+        = link_to 'Sign up', new_user_path, class:"elbc"
+        = link_to 'Sign in',signin_path, class:"elbc"
       .clr
     .sidebar_d
       .sidebar_1
