@@ -1,19 +1,9 @@
 $ ->
-	a = 0;
-	v = 0;
-	$("button.navbar-toggle.collapsed").click ->
-		if (a==0)
+	$(document).on "click", "button.navbar-toggle.collapsed", ->
+		v = $(".panel").css('height');
+		if (v=="35px")
 			$(".navbar-collapse.bs-js-navbar-collapse.collapse").addClass('in')
-			$(".navbar-collapse.bs-js-navbar-collapse.collapse").css('height','auto')
-			v = $(".panel").css('height');
-			$(".sidebar_d").css('margin-top',v)
-			a=1;
+			$(".navbar-collapse.bs-js-navbar-collapse.collapse").css('height','auto')	
 		else
 			$(".navbar-collapse.bs-js-navbar-collapse.collapse").removeClass('in')
 			$(".navbar-collapse.bs-js-navbar-collapse.collapse").css('height','1px')
-			v = $(".panel").css('height');
-			$(".sidebar_d").css('margin-top',v)
-			a=0;
-
-
-  
