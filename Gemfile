@@ -12,7 +12,7 @@ gem 'agent_orange'
 
 gem 'mysql2'
 
-gem 'paperclip'
+#gem 'paperclip'
 
 gem 'haml-rails'
 
