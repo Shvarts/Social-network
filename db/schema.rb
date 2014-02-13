@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.string   "remember_token"
   end
 
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
   create_table "visits", force: true do |t|
     t.string   "ip"
     t.string   "browser_name"
@@ -48,15 +50,5 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "walls", force: true do |t|
-    t.string   "post"
-    t.integer  "usr"
-    t.string   "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
