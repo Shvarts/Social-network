@@ -1,0 +1,13 @@
+%h1 Update post
+= form_for :post_update do |f|
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :content
+    %br
+    = f.text_area :content
+  %p
+    %button.update.btn.btn-primary{type: "button"} Update changes
+    %button.btn.btn-primary.pull-right{"data-dismiss" => "modal", type: "button"} Cancel

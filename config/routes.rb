@@ -13,9 +13,10 @@ SocialNetworc::Application.routes.draw do
 		get '/', to: 'pages#index'
   end
 
-  resources :wall do
-    resources :posts
-  end
+  post "new_post" => 'posts#create' 
+  post "update_post" => 'posts#update' 
+  post "delete_post" => 'posts#destroy' 
+  
 
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
@@ -24,4 +25,3 @@ SocialNetworc::Application.routes.draw do
 
 
 end
-

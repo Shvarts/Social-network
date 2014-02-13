@@ -1,0 +1,16 @@
+-@posts.each do |post|
+  .post_body
+    .post_photo
+      = image_tag(post.photo, :size => "50x50")   
+    .post_b
+      .post_titel
+        %b
+          = post.title
+          %button.de.btn.btn-primary.pull-right{"data-target" => ".bs-example-modal-sm", "data-toggle" => "modal", tagname: "#{post.id}"}
+            = image_tag("del.png", :size => "22x22")
+          %button.up.btn.btn-primary.pull-right{"data-target" => "#myModal.update", "data-toggle" => "modal", tagname: "#{post.id}"}
+            = image_tag("edit.png", :size => "22x22")
+      .post_content
+        = post.content
+  .clr
+      

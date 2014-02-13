@@ -34,7 +34,20 @@ a:hover {
 	background-color: #000;
     color: #fff;
 }
-
+.post_photo{
+	float: left;
+	width:55px;
+}
+.post_body{
+	margin:15px 0;
+}
+.post_titel{
+	min-height: 24px;
+}
+.post_b{
+	float: left;
+	width:442px;
+}
 .header {
 	background-image:url("grey_header_web_retina.jpg");
 	position: fixed;
