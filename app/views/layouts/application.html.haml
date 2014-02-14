@@ -11,25 +11,32 @@
   %body
     .header
       .panel
-        .navbar-header
-          %button.navbar-toggle.collapsed{"data-target" => ".bs-js-navbar-collapse", "data-toggle" => "collapse", type: "button"}
-            %span.icon-bar 
-            %span.icon-bar 
-            %span.icon-bar 
-          = link_to "Home", root_path, class:"elbc"
-        .navbar-collapse.bs-js-navbar-collapse.collapse{style: "height: 1px;"}
-          %ul.nav.navbar-nav
-            -if false
-              %li
-                = link_to "Profile", profile_path , class:"boot"
-              %li
-                = link_to "Sing out", "#" , class:"boot"
-            -else
-              %li
-                = link_to "Sing in", new_session_path , class:"boot"
-              %li
-                = link_to "Sing up", new_user_path , class:"boot"
-        
+        %nav#navbar-example.navbar.navbar-default.navbar-static{role: "navigation"}
+          .container-fluid
+            .navbar-header
+              %button.navbar-toggle.collapsed{"data-target" => ".bs-example-js-navbar-collapse", "data-toggle" => "collapse", type: "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %a.navbar-brand{href: "/"} Home
+            .navbar-collapse.bs-example-js-navbar-collapse.collapse{style: "height: 1px;"}
+              %ul.nav.navbar-nav
+                - if false
+                  %li.dropdown
+                    %a{href: "/profile", role: "button"}
+                      Profile
+                  %li.dropdown
+                    %a{ href: "#", role: "button"}
+                      Sing out
+                - else
+                  %li.dropdown
+                    %a{ href: "/sessions/new", role: "button"}
+                      Sing in
+                  %li.dropdown
+                    %a{ href: "/users/new", role: "button"}
+                      Sing up
+
       .clr
     .sidebar_d
       .sidebar_1

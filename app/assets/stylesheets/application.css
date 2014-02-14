@@ -9,6 +9,104 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require modal
+ *= require css/bootstrap
+ *= require_tree .
  */
+
+body {
+  margin:0px;
+  background-image:url(bg.png) ;
+  background-color: #C0DEED;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+a {
+  color: #999;
+  text-decoration: none;
+}
+a:hover {
+	background-color: #000;
+    color: #fff;
+}
+.post_photo{
+	float: left;
+	width:55px;
+}
+.post_body{
+	margin:15px 0;
+}
+.post_titel{
+	min-height: 24px;
+}
+.post_b{
+	float: left;
+	width:442px;
+}
+.header {
+	background-color: #262626;
+	position: fixed;
+	top:0px;
+	margin:0;
+	width: 100%;
+	height: 35px;
+}
+.panel{
+	margin:0px auto;
+	background-color: transparent;
+	max-width: 900px;
+	height: 35px;
+}
+.elbc{
+	font-family: arial;
+	font-size:14px;
+	padding: 10px 0px 0px;
+	text-align: center;
+	float: left;
+	display: block;
+	width: 90px;
+	height: 25px;
+}
+.sidebar_d {
+	background-color: rgba(255, 255, 255, 0.3);
+    margin:35px auto 0;
+	padding: 0;
+	width: 900px;
+	}
+.sidebar_1 {
+	padding: 5px;
+	padding-left:20px;
+	width: 270px;
+	float: left;
+}
+.sidebar_2 {
+	padding: 2px 5px 2px 2px;
+	width: 593px;
+	float: right;
+}
+.clr{
+	clear: both;
+}
+.oblako {
+	border-radius:15px;
+	background-color: #fff;
+	display: block;
+	margin:1% auto;
+	padding: 15px;
+	width: 90%;
+	clear: both;
+	margin-bottom: 10px;
+}
+.footer {
+	text-align:center;
+	background-color: rgba(255, 255, 255, 0.3);
+	margin:0 auto 0;
+	width: 900px;
+	border-radius: 0px 0px 15px 15px;
+}
+
