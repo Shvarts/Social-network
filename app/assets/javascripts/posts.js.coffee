@@ -27,12 +27,20 @@ $ ->
 $ ->
   $(document).on "click", "button.up", ->
     id = $(this).attr("tagname")
+    post_update_mw id
     return
 
 $ ->
   $(document).on "click", "button.de", ->
     id = $(this).attr("tagname")
     return
+
+$ ->
+  $(document).on "click", "button.new_post_hp", ->
+    id = 0;
+    post_update_mw id
+    return
+
 
 
 
@@ -87,6 +95,23 @@ post_delete = (idd) ->
 
     error: (data) ->
       alert "erorr - post_delete"
+      return
+
+  return
+
+post_update_mw = (idd) ->
+  $.ajax
+    type: "POST"
+    data:
+      id: idd
+
+    url: "post_update_mw"
+    success: (data) ->
+      $("#renser_post_update_mw").html(data)
+      return
+
+    error: (data) ->
+      alert "erorr - post_update_mw"
       return
 
   return

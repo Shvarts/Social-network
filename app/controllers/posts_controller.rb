@@ -1,5 +1,14 @@
 class PostsController < ApplicationController
 	
+	def new
+		if params[:id] == "0"
+			render partial: "post_new"
+		else
+			@post = Post.find(params[:id])
+			render partial: "post_update"
+		end
+	end
+	
 	def create
 		@posts = Post.all
     	@post = Post.create(post_params)

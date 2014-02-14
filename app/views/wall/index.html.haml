@@ -2,7 +2,7 @@
   .oblako
     %h1 Listing posts
     .new_post
-      %button.btn.btn-primary{"data-target" => "#myModal.new", "data-toggle" => "modal"}
+      %button.new_post_hp.btn.btn-primary{"data-target" => "#myModal.new", "data-toggle" => "modal"}
         = image_tag("tweet.png", :size => "50x50")
     #posts_user
       = render partial: "posts/posts_home"
@@ -12,7 +12,7 @@
           .modal-header
             %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
             %h4#myModalLabel.modal-title New post
-          .modal-body
+          #renser_post_new_mw.modal-body
             = render "posts/post_new"
 
     #myModal.update.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
@@ -21,7 +21,7 @@
           .modal-header
             %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
             %h4#myModalLabel.modal-title Update post
-          .modal-body
+          #renser_post_update_mw.modal-body
             = render "posts/post_update"
 
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
