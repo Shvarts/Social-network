@@ -4,12 +4,25 @@
 
 .new_post a {
 	color: black;
+    width: 20%;
+    margin-left: 5%;
+}
+.new_post {
+    float: left;
+    margin-left: 10%;
 }
 .posts{
     display: inline-block;
 	border-radius: 15px 15px 15px 15px;
     background-color: rgba(255, 255, 255, 1); 
     *display: inline;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 50%;
+}
+.post_body{
+    width: 100%;
+
 }
 .post_body ul {
     display: inline-block;
@@ -17,8 +30,9 @@
     padding: 0;
     /* For IE, the outcast */
     zoom:1;
-    *display: inline;
-    border-bottom: 1px solid #E1E8ED; 
+
+    border-bottom: 1px solid #E1E8ED;
+    max-width: 100%;
 }
 .post_body p {
     float: left;
@@ -27,6 +41,10 @@
 .post_photo p {
 	float: left;
 	border-radius: 15px 15px 15px 15px;
+
+}
+.post_photo {
+    margin-left: 10px;
 }
 .post_content p {
     float: left;	
@@ -37,9 +55,8 @@
 }
 .icons{
 	padding-top: 30px;
-    padding-bottom: 30px;
     padding-right: 20px;
-    padding-left: 450px;	
+    float: right;
 }
 
 .icons a:hover {
@@ -48,4 +65,18 @@
 
 .title{
 	font-size: bold;
+}
+.post_body ul{
+
+list-style-type: none;
+}
+@media (max-width: 520px){
+.posts{
+    width: 90%;
+
+}
+.post_body{
+    height: 200px;
+}
+
 }
