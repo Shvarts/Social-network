@@ -9,14 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require modal
+ *= require css/bootstrap
+ *= require_tree .
  */
 
 body {
   margin:0px;
-  background-color: #C0DEED;
   background-image:url(bg.png) ;
+  background-color: #C0DEED;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,9 +34,22 @@ a:hover {
 	background-color: #000;
     color: #fff;
 }
-
+.post_photo{
+	float: left;
+	width:55px;
+}
+.post_body{
+	margin:15px 0;
+}
+.post_titel{
+	min-height: 24px;
+}
+.post_b{
+	float: left;
+	width:442px;
+}
 .header {
-	background-image:url("grey_header_web_retina.jpg");
+	background-color: #262626;
 	position: fixed;
 	top:0px;
 	margin:0;
@@ -44,7 +58,8 @@ a:hover {
 }
 .panel{
 	margin:0px auto;
-	width: 900px;
+	background-color: transparent;
+	max-width: 900px;
 	height: 35px;
 }
 .elbc{
@@ -86,7 +101,6 @@ a:hover {
 	width: 90%;
 	clear: both;
 	margin-bottom: 10px;
-	padding-top: 15%;
 }
 .footer {
 	text-align:center;
