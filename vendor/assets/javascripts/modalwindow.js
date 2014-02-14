@@ -32,10 +32,9 @@ initWin: function(width, height, html) {
 
 
 
-       _win.style.left = '25%';
        _win.style.top = '50%';
        _win.style.marginTop = -(_win.offsetHeight / 2) + 'px';
-       _win.style.marginLeft = -(width / 2) + 'px';
+       _win.style.marginLeft = +(100 - width) / 2 + '%';
        _win.style.textAlign = 'center';
 },
 close: function() {

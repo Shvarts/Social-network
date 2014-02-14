@@ -9,15 +9,18 @@
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   %body
-    .header
-      .panel
+    .header.row-fluid
+      %span1
         = link_to 'Home', root_path, class:"elbc"
+      %span1
         = link_to 'Profile', profile_path, class:"elbc"
+      %span1
         = link_to 'Sign up', new_user_path, class:"elbc"
+      %span1
         = link_to 'Sign in',signin_path, class:"elbc"
-      .clr
-    .sidebar_d
-      .sidebar_1
+    %br
+    .sidebar_d.row-fluid
+      %span1.sidebar_1
         .oblako
           sidebar
       = yield
