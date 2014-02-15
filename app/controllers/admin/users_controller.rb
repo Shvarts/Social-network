@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.find(:all)
+    @users.sort! { |a,b| a.firstname.downcase <=> b.firstname.downcase }
   end
 
   def destroy

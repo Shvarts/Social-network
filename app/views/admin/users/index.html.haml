@@ -2,16 +2,18 @@
 
 %table
   %tr
+    %tr   
     %th Firstname
     %th Lastname
     %th Email
     %th Password
     %th
-    %th
-    %th
+    %th 
+    %th 
 
   - @users.each do |user|
     %tr
+      %td= user.firstname  
       %td= user.lastname
       %td= user.email
       %td= user.password

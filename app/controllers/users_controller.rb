@@ -12,6 +12,11 @@ class UsersController < ApplicationController
 		end
   	end
 
+  	def sort
+  		@users = User.find(:all)
+  		@users.sort! { |a,b| a.firstname.downcase <=> b.firstname.downcase }
+  	end	
+
   	private
   		def user_params
     		params.require(:user).permit(:firstname, :lastname, :email, :password)
