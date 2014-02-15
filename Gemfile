@@ -14,6 +14,8 @@ gem 'mysql2'
 
 gem 'paperclip'
 
+gem 'social-share-button'
+
 gem 'haml-rails'
 
 # Use SCSS for stylesheets
