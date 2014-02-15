@@ -11,3 +11,17 @@
         .icons
           = link_to( image_tag("edit.png", :size => "22x22"), edit_wall_path(post))
           = link_to( image_tag("del.png", :size => "22x22"),  "/wall/#{post.id}", :confirm => 'Are you sure?', :method => :delete)
+        .spread
+          .twshare.left
+            %a.twitter-share-button.left{"data-count" => "horizontal", "data-via" => "fuonrails", :href => "http://twitter.com/share"} Tweet
+            %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+          .CLR  
+        %fb-root
+          :javascript
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
