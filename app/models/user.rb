@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password, message: "Your password and it's checking must be identical"
 
-  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/images/missing_avatar.png"
+  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "missing_avatar.png"
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
@@ -25,14 +25,31 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  def self.current
+    Thread.current[:user]
+  end
+
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
+
+
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def sign_in(user)
+    remember_token = User.new_remember_token
+    cookies.permanent[:remember_token] = remember_token
+    user.update_attribute(:remember_token, User.encrypt(remember_token))
+    current_user = User.find_by(remember_token: remember_token)
+  end
+
+
   private
 
   def create_remember_token
-    self.remember_token = Users.encrypt(Users.new_remember_token)
+    self.remember_token = User.encrypt(User.new_remember_token)
   end
 
 end

@@ -7,23 +7,27 @@
 = form_for @user do |f|
   %p
     = f.label :Name
-    %br
+    %br/
     = f.text_field :firstname
   %p
     = f.label :Lastname
-    %br
+    %br/
     = f.text_field :lastname
   %p
     = f.label :Email
-    %br
+    %br/
     = f.email_field :email
   %p
     = f.label :Password
-    %br
+    %br/
     = f.password_field :password
   %p
     = f.label :Password_confirmation
-    %br
+    %br/
     = f.password_field :password_confirmation
+  %p
+    = f.label :avatar
+    %br/
+    = f.file_field :avatar
   %p
     = f.submit "Sing up"
