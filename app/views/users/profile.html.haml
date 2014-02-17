@@ -1,6 +1,6 @@
 .sidebar_2
   .oblako
-    %img{height: "200", src: "http://dummyimage.com/200x200/99cccc.gif&text=The+image!", style: "float: left; margin-right: 15px;", width: "200"}/
+    = image_tag(@user.avatar, :alt => "rss feed", style: "float: left; margin-right: 15px;", width: "200")
     %div
       %h3{style: "margin: 0px;"}
         Name:
@@ -10,3 +10,5 @@
         %span{style: "color: blue"} Test surname
     .div{style: "clear: both;"}
 .clr
+
+        

@@ -4,5 +4,8 @@
 %p
   %strong Content:
   = @post.content
+%p
+  %strong Photo:
+  = image_tag @post.photo.url(:small) 
   = link_to 'Back', wall_index_path
 |   #{link_to 'Edit', edit_wall_path(@post)}

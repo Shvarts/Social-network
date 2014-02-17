@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   before_filter :save_visit
   include SessionsHelper
 
+	def set_current_user
+	  User.current = current_user
+	end
+
 private
 
 	def save_visit
