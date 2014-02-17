@@ -7,6 +7,8 @@ SocialNetworc::Application.routes.draw do
 
   get 'profile' => 'users#profile'
   post 'user_search' => 'admin/pages#user_search' 
+
+  post 'wall/new' => 'wall#create'
   
 
   namespace :admin do 
