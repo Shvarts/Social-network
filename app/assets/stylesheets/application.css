@@ -49,12 +49,12 @@ a:hover {
 	width:442px;
 }
 .header {
-	background-color: #262626;
+	background-color: black !important;
 	position: fixed;
 	top:0px;
 	margin:0;
 	width: 100%;
-	height: 35px;
+    height: auto !important;
 }
 .panel{
 	margin:0px auto;
@@ -74,14 +74,14 @@ a:hover {
 }
 .sidebar_d {
 	background-color: rgba(255, 255, 255, 0.3);
-    margin:35px auto 0;
+    margin:2% auto 0;
 	padding: 0;
-	width: 900px;
+	width: 90%;
 	}
 .sidebar_1 {
 	padding: 5px;
-	padding-left:20px;
-	width: 270px;
+	margin-left:2%;
+	width: 200px;
 	float: left;
 }
 .sidebar_2 {
@@ -96,7 +96,7 @@ a:hover {
 	border-radius:15px;
 	background-color: #fff;
 	display: block;
-	margin:1% auto;
+
 	padding: 15px;
 	width: 90%;
 	clear: both;
@@ -106,7 +106,23 @@ a:hover {
 	text-align:center;
 	background-color: rgba(255, 255, 255, 0.3);
 	margin:0 auto 0;
-	width: 900px;
+	width: 90%;
 	border-radius: 0px 0px 15px 15px;
+}
+@media (max-width: 375px){
+.sidebar_d{
+    margin-top: 30%;
+}
+.oblako{
+  width: 60%;
+}
+}
+@media (max-width: 195px){
+.sidebar_d{
+    margin-top: 90%;
+}
+.oblako{
+    width: 35%;
+}
 }
 
