@@ -14,7 +14,7 @@
  *= require_tree .
  */
 
-body {
+body.my {
   margin:0px;
   background-image:url(bg.png) ;
   background-color: #C0DEED;
@@ -33,6 +33,9 @@ a {
 a:hover {
 	background-color: #000;
     color: #fff;
+}
+.button-padding-0.btn{
+	padding:0px;
 }
 .post_photo{
 	float: left;
