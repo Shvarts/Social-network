@@ -277,6 +277,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #fff;
 }
 input,
 button,
@@ -1986,7 +1987,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding:0;
+  padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
