@@ -12,10 +12,10 @@ SocialNetworc::Application.routes.draw do
   namespace :admin do 
 		get '/', to: 'pages#index'
   end
-  post "post_update_mw" => 'posts#new' 
-  post "new_post" => 'posts#create' 
-  post "update_post" => 'posts#update' 
-  post "delete_post" => 'posts#destroy'
+  resources :posts 
+  post 'delete_post' => 'posts#destroy'
+  post 'post_modal_window' => 'posts#new'
+  post 'posts/update'
 
   
 

@@ -2,35 +2,15 @@
   .oblako
     %h1 Listing posts
     .new_post
-      %button.new_post_hp.btn.btn-primary{"data-target" => "#myModal.new", "data-toggle" => "modal"}
+      %button.new_post_hp.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal"}
         = image_tag("tweet.png", :size => "50x50")
     #posts_user
       = render partial: "posts/posts_home"
-    #myModal.new.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+    #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog
         .modal-content
           .modal-header
             %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
             %h4#myModalLabel.modal-title New post
-          #renser_post_new_mw.modal-body
-            = render "posts/post_new"
-
-    #myModal.update.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-      .modal-dialog
-        .modal-content
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Update post
-          #renser_post_update_mw.modal-body
-            = render "posts/post_update"
-
-    .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
-      .modal-dialog.modal-sm
-        .modal-content
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Are you sure?
-          .modal-body
-            %button.delete.btn.btn-primary{type: "button"} Yes
-            %button.btn.btn-primary.pull-right{"data-dismiss" => "modal", type: "button"}  No
+          #render_post_mw.modal-body
 .clr

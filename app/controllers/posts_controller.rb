@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	
 	def new
+		@post = Post.new
 		if params[:id] == "0"
 			render partial: "post_new"
 		else
@@ -17,13 +18,9 @@ class PostsController < ApplicationController
 
 	def update
 		@posts = Post.all
-	    @post = Post.find(params[:id])
-
-	    if  @post.update(post_params)
-	        render partial: "posts_home"
-	    else 
-	    	render text: "Erorr_update_controller"
-	    end
+	    @post = Post.find(post_params[:id])
+		@post.update(post_params)
+	    render partial: "posts_home"
 	end
 
 
@@ -38,7 +35,7 @@ class PostsController < ApplicationController
 private
 
   	def post_params
-    	params.permit(:title, :content)
+    	params.require(:post).permit(:title, :content, :id)
   	end
 
 end

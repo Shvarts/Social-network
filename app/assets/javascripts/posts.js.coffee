@@ -3,84 +3,32 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 id = 0;
 $ ->
-  $(document).on "click", "button.save", ->
-    title = $("#post_title").val()
-    content = $("#post_content").val()
-    post_new title, content
-    $("#myModal.new").modal "hide"
-    return
+    $(document).on "click", ".save", ->
+      $("form").on("ajax:success", (xhr, data, status) ->
+        $("#myModal").modal "hide"
+        $("#posts_user").html(data)
+        return
+      ).on "ajax:error", (error, status, xhr) ->
+        alert "error - ajax:error"
+        return
+      return
 
 $ ->
-  $(document).on "click", "button.update", ->
-    title = $("#post_update_title").val()
-    content = $("#post_update_content").val()
-    post_update id, title, content
-    $("#myModal.update").modal "hide"
-    return
-
-$ ->
-  $(document).on "click", "button.delete", ->
-    post_delete id
-    $(".bs-example-modal-sm").modal "hide"
+  $(document).on "click", "button.new_post_hp", ->
+    post_modal_window 0
     return
 
 $ ->
   $(document).on "click", "button.up", ->
     id = $(this).attr("tagname")
-    post_update_mw id
+    post_modal_window id
     return
 
 $ ->
   $(document).on "click", "button.de", ->
     id = $(this).attr("tagname")
+    post_delete id
     return
-
-$ ->
-  $(document).on "click", "button.new_post_hp", ->
-    id = 0;
-    post_update_mw id
-    return
-
-
-
-
-post_new = (params_t,params_c) ->
-  $.ajax
-    type: "POST"
-    data:
-      title: params_t
-      content: params_c
-
-    url: "new_post"
-    success: (data) ->
-      $("#posts_user").html(data)
-      return
-
-    error: (data) ->
-      alert "erorr - post_new"
-      
-      return
-
-  return
-
-post_update = (idd,params_t,params_c) ->
-  $.ajax
-    type: "POST"
-    data:
-      id: idd
-      title: params_t
-      content: params_c
-
-    url: "update_post"
-    success: (data) ->
-      $("#posts_user").html(data)
-      return
-
-    error: (data) ->
-      alert "erorr - post_update"
-      return
-
-  return
 
 post_delete = (idd) ->
   $.ajax
@@ -99,15 +47,15 @@ post_delete = (idd) ->
 
   return
 
-post_update_mw = (idd) ->
+post_modal_window = (idd) ->
   $.ajax
     type: "POST"
     data:
       id: idd
 
-    url: "post_update_mw"
+    url: "post_modal_window"
     success: (data) ->
-      $("#renser_post_update_mw").html(data)
+      $("#render_post_mw").html(data)
       return
 
     error: (data) ->

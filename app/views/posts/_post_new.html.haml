@@ -1,13 +1,13 @@
 %h1 New Post
-= form_for :post do |f|
+= form_for @post,  url: {controller:"posts",action:"create"}, remote: true do |f|
   %p
     = f.label :title
     %br
-    = f.text_field :title , value:""
+    = f.text_field :title 
   %p
     = f.label :content
     %br
-    = f.text_area :content , value:""
+    = f.text_area :content 
   %p
-    %button.save.btn.btn-primary{type: "button"} Save changes
+    = f.submit class: "save btn btn-primary"
     %button.btn.btn-primary.pull-right{"data-dismiss" => "modal", type: "button"} Cancel
