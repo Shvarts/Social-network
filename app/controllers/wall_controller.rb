@@ -1,8 +1,10 @@
 class WallController < ApplicationController
  
 	def index
+
 		@posts = Post.all
-    @post = Post.new
+        @post = Post.new
+
 	end
 
 end
