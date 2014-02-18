@@ -5,7 +5,7 @@
       %button.new_post_hp.button-padding-0.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal"}
         = image_tag("tweet.png", :size => "50x50")
     .clr
-    %span6.post_body#posts_user
+    .posts.my#posts_user
       = render partial: "posts/posts_home"
     #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog
