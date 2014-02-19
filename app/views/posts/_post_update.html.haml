@@ -1,0 +1,14 @@
+%h1 Update post
+= form_for @post,  url: {controller:"posts",action:"update"}, remote: true do |f|
+  %p
+    = f.hidden_field :id
+    = f.label :title
+    %br
+    = f.text_field :title 
+  %p
+    = f.label :content
+    %br
+    = f.text_area :content 
+  %p
+    = f.submit class: "save btn btn-primary"
+    %button.btn.btn-primary.pull-right{"data-dismiss" => "modal", type: "button"} Cancel

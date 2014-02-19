@@ -14,7 +14,7 @@
  *= require_tree .
  */
 
-body {
+body.my {
   margin:0px;
   background-image:url(bg.png) ;
   background-color: #C0DEED;
@@ -34,6 +34,14 @@ a:hover {
 	background-color: #000;
     color: #fff;
 }
+.posts.my{
+	width:100%;
+	margin:0;
+
+}
+.button-padding-0.btn{
+	padding:0px;
+}
 .post_photo{
 	float: left;
 	width:55px;
@@ -45,22 +53,51 @@ a:hover {
 	min-height: 24px;
 }
 .post_b{
-	float: left;
-	width:442px;
+	float: right;
+	width:430px;
 }
 .header {
-	background-color: black !important;
+	background-color: transparent;
 	position: fixed;
 	top:0px;
 	margin:0;
 	width: 100%;
     height: auto !important;
 }
-.panel{
+.navbar.my{
+	margin-bottom: 0px;
+  	border: none;
+  	border-radius: 0px;
+}
+.navbar-default.my{
+	background-color: #262626;
+	border: none;
+}
+.navbar-nav.my{
+  	margin: 0px;
+}
+.navbar-default.my a{
+	display: block;
+	height: 50px;
+	border: none;
+}
+.navbar-collapse.my {
+	padding: 0px;
+	border: none;
+}
+.navbar-default.my a:hover {
+	background-color: #000;
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a.my:hover,
+.navbar-default .navbar-nav > li > a.my:focus {
+ 	color: #fff;
+  	background-color: #000;
+}
+.panel.my{
 	margin:0px auto;
 	background-color: transparent;
-	max-width: 900px;
-	height: 35px;
+	max-width: 90%;
 }
 .elbc{
 	font-family: arial;
@@ -74,7 +111,7 @@ a:hover {
 }
 .sidebar_d {
 	background-color: rgba(255, 255, 255, 0.3);
-    margin:2% auto 0;
+    margin:51px auto 0;
 	padding: 0;
 	width: 90%;
 	}
