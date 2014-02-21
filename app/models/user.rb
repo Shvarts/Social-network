@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
             :length => {:in => 2..250},
             :uniqueness => true,
             :format => {:with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
-
+  has_secure_password
   validates :password,  :presence => true,
             :length => {:within => 6..40}
 
