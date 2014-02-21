@@ -22,13 +22,12 @@
               %a.navbar-brand{href: "/"} Home
             .navbar-collapse.bs-example-js-navbar-collapse.collapse.my{style: "height: 1px;"}
               %ul.nav.navbar-nav.my
-                - if false
+                - if current_user
                   %li.dropdown
                     %a.my{href: "/profile", role: "button"}
                       Profile
                   %li.dropdown
-                    %a.my{ href: "#", role: "button"}
-                      Sing out
+                    = link_to 'Sing out', signout_path, method: :delete
                 - else
                   %li.dropdown
                     %a.my{ href: "/sessions/new", role: "button"}

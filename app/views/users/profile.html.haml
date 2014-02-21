@@ -1,12 +1,19 @@
 .sidebar_2
   .oblako
-    %img{height: "200", src: "http://dummyimage.com/200x200/99cccc.gif&text=The+image!", style: "float: left; margin-right: 15px;", width: "200"}/
+    %img/
+    = image_tag @user.avatar.url(:display), height: "200", style: "float: left; margin-right: 15px;", width: "200"
     %div
       %h3{style: "margin: 0px;"}
+        Email:
+        %span{style: "color: blue"}
+          = @user.email
+      %h3{style: "margin: 0px;"}
         Name:
-        %span{style: "color: blue"} Test name
+        %span{style: "color: blue"}
+          = @user.firstname
       %h3{style: "margin: 0px;"}
         Surname:
-        %span{style: "color: blue"} Test surname
+        %span{style: "color: blue"}
+          = @user.lastname
     .div{style: "clear: both;"}
 .clr
