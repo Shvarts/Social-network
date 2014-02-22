@@ -3,15 +3,22 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 id = 0;
 $ ->
-    $(document).on "click", ".save", ->
-      $("form").on("ajax:success", (xhr, data, status) ->
+  $(document).on "click", ".save", ->
+    form = $("form.new_post")
+    formData = new FormData(form[0])
+    $.ajax
+      type: "POST"
+      url: form.attr( 'action' )
+      data: formData
+      cache: false
+      contentType: false
+      processData: false
+      success: (data) ->
         $("#myModal").modal "hide"
-        $("#posts_user").html(data)
-        return
-      ).on "ajax:error", (error, status, xhr) ->
-        alert "error - ajax:error"
-        return
-      return
+        $("#posts_user").prepend(data)
+      error: (error) ->
+        console.log error
+    return false
 
 $ ->
   $(document).on "click", "button.new_post_hp", ->
