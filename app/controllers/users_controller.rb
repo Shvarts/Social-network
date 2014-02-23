@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	load_and_authorize_resource
 
 	def new
 		@user = User.new
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
+		# @user.roles << Role.find_by_name(:user)
 		if @user.save
 			redirect_to root_path
 		else

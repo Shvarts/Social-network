@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :save_visit
   include SessionsHelper
+  
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to root_url 	
+  # end
+
 
 private
 

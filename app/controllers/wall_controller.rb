@@ -1,5 +1,5 @@
 class WallController < ApplicationController
- 
+	
 	def index
 
 		@posts = Post.all

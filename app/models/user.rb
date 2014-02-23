@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_and_belongs_to_many :roles
+
   validates :firstname, :presence => true,
             :length => {:in => 2..20}
 
@@ -21,6 +23,18 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 
+  def role?(role)
+    !!self.roles.find_by_name(role.to_s.camelize)
+  end
+
+  def self.admin?(user)
+    user.role? :admin
+  end
+
+  def self.user?(user)
+    user.role? :user
+  end
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -34,7 +48,15 @@ class User < ActiveRecord::Base
 
   end
 
+
   private
+  def self.create_admin(user)
+    user.roles << Role.find_by_name(:admin)
+  end
+
+  def self.create_user
+    self.roles << Role.find_by_name(:user)
+  end
 
   def create_remember_token
     self.remember_token = User.encrypt(User.new_remember_token)
