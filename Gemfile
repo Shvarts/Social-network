@@ -12,13 +12,11 @@ gem 'agent_orange'
 
 gem 'mysql2'
 
-gem 'paperclip'
-
 gem 'haml-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
+gem 'cancan'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

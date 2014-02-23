@@ -5,11 +5,12 @@
     .post_b
       .post_titel
         %b
-          = post.title
-          %button.de.button-padding-0.btn.btn-primary.pull-right{tagname: "#{post.id}"}
-            = image_tag("del.png", :size => "22x22")
-          %button.up.button-padding-0.btn.btn-primary.pull-right{"data-target" => "#myModal", "data-toggle" => "modal", tagname: "#{post.id}"}
-            = image_tag("edit.png", :size => "22x22")
+          - if can? :update, :destroy, @post
+            = post.title
+            %button.de.button-padding-0.btn.btn-primary.pull-right{tagname: "#{post.id}"}
+              = image_tag("del.png", :size => "22x22")
+            %button.up.button-padding-0.btn.btn-primary.pull-right{"data-target" => "#myModal", "data-toggle" => "modal", tagname: "#{post.id}"}
+              = image_tag("edit.png", :size => "22x22")
       .post_content
         = post.content
   .clr
