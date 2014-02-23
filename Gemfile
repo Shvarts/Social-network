@@ -12,7 +12,7 @@ gem 'agent_orange'
 
 gem 'mysql2'
 
-gem 'paperclip'
+gem 'paperclip', '~> 3.5.2'
 
 gem 'haml-rails'
 
@@ -39,7 +39,7 @@ gem 'twitter-bootstrap-rails'
 gem 'turbolinks'
 
 # This gem attach photo to user model
-gem 'paperclip'
+# gem 'paperclip'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

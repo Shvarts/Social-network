@@ -11,8 +11,8 @@ class PostsController < ApplicationController
 	end
 	
 	def create
-		@posts = Post.all
     	@post = Post.create(post_params)
+		@posts = Post.all
     	render partial: "posts_home"
   	end
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 private
 
   	def post_params
-    	params.require(:post).permit(:title, :content, :id)
+    	params.require(:post).permit(:title, :content, :id, :photo)
   	end
 
 end
