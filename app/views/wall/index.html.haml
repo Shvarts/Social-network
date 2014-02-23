@@ -2,6 +2,7 @@
   .oblako
     %h1 Listing posts
     %span1.new_post
+    - if can? :create, @post
       %button.new_post_hp.button-padding-0.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal"}
         = image_tag("tweet.png", :size => "50x50")
     .clr
