@@ -10,5 +10,9 @@
     %br
     = f.text_area :content 
   %p
+    = f.label :photo
+    %br
+    = f.file_field :photo
+  %p   
     = f.submit class: "save btn btn-primary"
     %button.btn.btn-primary.pull-right{"data-dismiss" => "modal", type: "button"} Cancel

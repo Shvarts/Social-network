@@ -19,3 +19,5 @@
 .idea
 .sass-cache/
 /*.exe
+
+/public/system/

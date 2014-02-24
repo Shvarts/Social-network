@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require js/bootstrap
 //= require turbolinks
-//= require modalwindow
 //= require infinite_scroll
 //= require_tree .
 

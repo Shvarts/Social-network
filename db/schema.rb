@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205133029) do
+ActiveRecord::Schema.define(version: 20140208224853) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -36,7 +36,11 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "remember_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   create_table "visits", force: true do |t|
     t.string   "ip"
@@ -56,7 +60,5 @@ ActiveRecord::Schema.define(version: 20140205133029) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

@@ -11,21 +11,24 @@ class PostsController < ApplicationController
 	end
 	
 	def create
-		@posts = Post.all
-    	@post = Post.create(post_params)
-    	render partial: "posts_home"
-  	end
+    puts '++++++++++++++++++++++++++++++='
+    puts params.inspect
+    puts '++++++++++++++++++++++++++++++='
+    @post = Post.create(post_params)
+    @posts = [@post]
+    render partial: "posts_home"
+  end
 
 	def update
-		@posts = Post.all
 	    @post = Post.find(post_params[:id])
+      @posts = [@post]
 		@post.update(post_params)
 	    render partial: "posts_home"
 	end
 
 
 	def destroy
-		@posts = Post.all
+    @posts = []
         @post = Post.find(params[:id])
   	    @post.destroy
   	    render partial: "posts_home"
@@ -35,7 +38,7 @@ class PostsController < ApplicationController
 private
 
   	def post_params
-    	params.require(:post).permit(:title, :content, :id)
+    	params.require(:post).permit(:title, :content, :id, :photo)
   	end
 
 end
