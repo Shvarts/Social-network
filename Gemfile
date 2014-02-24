@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-gem "rspec-rails"
+	gem "rspec-rails"
+	gem "capybara"
+	gem 'selenium-webdriver'
 end
 
 
@@ -11,8 +13,6 @@ gem 'rails', '4.0.2'
 gem 'agent_orange'
 
 gem 'mysql2'
-
-gem 'paperclip'
 
 gem 'haml-rails'
 
