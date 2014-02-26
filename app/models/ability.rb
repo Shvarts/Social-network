@@ -9,11 +9,18 @@ class Ability
     elsif user.role? :user 
         can :manage, Post
         can :profile, User
+        can :manage, :destroy
     else
         can :read, Post
         can :create, User
     end     
 
+    
+    def authorize_parent
+        if current_user.blank? or !current_user.role? :admin 
+            redirect_to root_url
+        end
+    end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
