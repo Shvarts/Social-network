@@ -5,6 +5,11 @@
       %button.new_post_hp.button-padding-0.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal"}
         = image_tag("tweet.png", :size => "50x50")
     .clr
+    %h2 Search
+    .postssearch
+      =form_tag(wall_index_path, method: "post", remote: true, :id => 'wall_form_ajax', :authenticity_token => true ) do
+        =text_field_tag(:q)
+        =submit_tag("Search")
     .posts.my#posts_user
       = render partial: "posts/posts_home"
     #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}

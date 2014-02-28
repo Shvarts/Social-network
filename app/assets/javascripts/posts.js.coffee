@@ -3,6 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 id = 0;
 $ ->
+  $("#q").keyup ->
+    $("#wall_form_ajax").submit()
+
+
+  $("#wall_form_ajax").on("ajax:success", (e, data, status, xhr) ->
+    $(".posts.my#posts_user").html xhr.responseText
+  ).bind "ajax:error", (e, xhr, status, error) ->
+    $(".posts.my#posts_user").html "<p>ERROR: "+error+"</p>"
+
   $(document).on "click", ".save", ->
     form = $("form.new_post")
     formData = new FormData(form[0])

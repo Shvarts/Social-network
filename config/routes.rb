@@ -3,6 +3,7 @@ SocialNetworc::Application.routes.draw do
   root 'wall#index'
 
   get "wall/index"
+  post "wall/index" => "wall#ajax_read"
   resources :users ,only: [:new, :create]
 
   get 'profile' => 'users#profile'

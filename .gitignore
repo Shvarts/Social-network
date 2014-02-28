@@ -21,3 +21,5 @@
 /*.exe
 
 /public/system/
+
+/config/*.yml
