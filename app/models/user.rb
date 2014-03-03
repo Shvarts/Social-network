@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password, message: "Your password and it's checking must be identical"
 
-  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/images/missing_avatar.png"
+  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/missing_avatar.png"
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token

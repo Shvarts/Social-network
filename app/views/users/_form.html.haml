@@ -4,6 +4,9 @@
     %ul
       - @user.errors.full_messages.each do |msg|
         %li= msg
+-if flash[:success].present?
+  %h1
+    =flash[:success]
 = form_for @user do |f|
   %p
     = f.label :Name
@@ -20,7 +23,7 @@
   %p
     = f.label :Password
     %br
-    = f.password_field :password
+    = f.password_field :password, value:''
   %p
     = f.label :Password_confirmation
     %br

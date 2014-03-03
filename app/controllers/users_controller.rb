@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(user_params)
+		@user = User.create
 		if @user.save
 			redirect_to root_path
 		else
@@ -15,6 +15,34 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+
+  end
+
+  def edit_profile
+
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    us_params = user_params.to_hash
+    puts us_params['password']
+    puts('-------------------')
+    if  us_params['password'].blank?
+      puts('+++++++++++++++++++++')
+      us_params.delete 'password'
+      us_params.delete 'password_confirmation'
+    end
+
+
+
+    if @user.update_attributes(us_params)
+      flash[:success] = "Profile updated"
+      render 'edit_profile'
+    else
+      render 'edit_profile'
+    end
+
   end
 
   private
