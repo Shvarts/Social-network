@@ -5829,3 +5829,8 @@ td.visible-print {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.edit_profile_flash{
+    color: green;
+    font-size: 24px;
+    padding: 10px;
+}

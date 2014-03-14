@@ -20,6 +20,21 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
+  has_many :friendships
+  has_many :friends,
+           :through => :friendships,
+           :conditions => "status = 'accepted'",
+           :order => :firstname
+  has_many :requested_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+  has_many :pending_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'pending'",
+           :order => :created_at
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

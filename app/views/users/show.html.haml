@@ -1,0 +1,20 @@
+-if @friend
+  %div
+    %h3{style: "margin: 0px;"}
+      Email:
+      %span{style: "color: blue"}
+        = @friend.email
+    %h3{style: "margin: 0px;"}
+      Name:
+      %span{style: "color: blue"}
+        = @friend.firstname
+    %h3{style: "margin: 0px;"}
+      Surname:
+      %span{style: "color: blue"}
+        = @friend.lastname
+-#%link= link_to "Edit profile", @user
+.sidebar_2
+  .oblako
+    %h1
+    = render 'contact_box'
+.clr

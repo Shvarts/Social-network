@@ -16,5 +16,11 @@
         %span{style: "color: blue"}
           = @user.lastname
     .div{style: "clear: both;"}
-    %link= link_to "Edit profile", edit_profile_path(id: 'sdfds')
+    %link= link_to "Edit profile", edit_profile_path
+.clr
+%div
+.sidebar_2
+  .oblako
+    %h1 Friends
+    = render 'friendship/friend'
 .clr

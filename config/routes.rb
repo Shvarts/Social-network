@@ -3,13 +3,19 @@ SocialNetworc::Application.routes.draw do
   root 'wall#index'
 
   get "wall/index"
-  resources :users ,only: [:new, :create, :update]
+  resources :users
+
+  resources :friendship
 
   get 'profile' => 'users#profile'
-
-  post 'user_search' => 'admin/pages#user_search' 
-  
-
+  #get 'edit_profile' => 'users#edit_profile'
+  post 'user_search' => 'admin/pages#user_search'
+  get 'friend_send' => 'friendship#create'
+  get 'friend_delete' => 'friendship#delete'
+  get 'friend_accept' => 'friendship#accept'
+  get 'friend_decline' => 'friendship#decline'
+  get 'friend_cancel' => 'friendship#cancel'
+  get 'friends' => 'friendship#friends'
   namespace :admin do 
 		get '/', to: 'pages#index'
   end

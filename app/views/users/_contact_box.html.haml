@@ -1,0 +1,17 @@
+-if  @user != @friend
+  -status = friendship_status(@user, @friend)
+  -unless Friendship.exists?(@user, @friend)
+    =link_to "Request friendship with #{@friend.firstname}",friend_send_path(id: @friend.id)
+  -if status
+    -case status
+      -when 'requested'
+        %h3{style: "margin: 0px;"}
+          = @friend.firstname+" would like to be your friend."
+          %span{style: "color: blue"}
+            =link_to "Request  "+@friend.firstname, friend_accept_path(id: @friend.id)
+      -when 'pending'
+        %h3{style: "margin: 0px;"}
+          ="You have requested friendship from "+@friend.firstname
+      -when 'accepted'
+        %h3{style: "margin: 0px;"}
+          =@friend.firstname+" is your friend."

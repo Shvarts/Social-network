@@ -1,0 +1,22 @@
+%h3{style: "margin: 0px;cursor: pointer",class: 'friends'}
+  = pluralize(@user.friends.count, "RailsSpace friend")
+.friends_list{style: "display: none"}
+  -@user.friends.each do |friend|
+    %p{style: "margin: 0px;"}
+      =link_to friend.firstname+' '+friend.lastname,friend
+      =link_to "Delete",friend_delete_path(id: friend.id)
+%h3{style: "margin: 0px;cursor: pointer",class: 'requested'}
+  = pluralize(@user.requested_friends.count, "requested friend")
+.requested_list{style: "display: none"}
+  -@user.requested_friends.each do |requester|
+    %p{style: "margin: 0px;"}
+      =link_to requester.firstname+' '+requester.lastname,requester
+      =link_to "Accept",friend_accept_path(id: requester.id)
+      =link_to "Decline",friend_decline_path(id: requester.id)
+%h3{style: "margin: 0px;cursor: pointer",class: 'pending'}
+  = pluralize(@user.pending_friends.count, "pending friend")
+.pending_list{style: "display: none"}
+  -@user.pending_friends.each do |pending_friend|
+    %p{style: "margin: 0px;"}
+      =link_to pending_friend.firstname+' '+pending_friend.lastname,pending_friend
+      =link_to "Cancel request",friend_cancel_path(id: pending_friend.id)

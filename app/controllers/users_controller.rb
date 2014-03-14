@@ -2,7 +2,12 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-	end
+  end
+
+  def show
+    @user = current_user
+    @friend = User.find_by_id(params[:id])
+  end
 
 	def create
 		@user = User.create
@@ -14,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @hide_edit_links = true
     @user = current_user
 
   end
@@ -25,27 +31,36 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    us_params = user_params.to_hash
-    puts us_params['password']
-    puts('-------------------')
+    us_params = user_edit_params.to_hash
+    puts(@user.password)
+    puts('-------------------------')
     if  us_params['password'].blank?
-      puts('+++++++++++++++++++++')
       us_params.delete 'password'
       us_params.delete 'password_confirmation'
-    end
-
-
-
-    if @user.update_attributes(us_params)
-      flash[:success] = "Profile updated"
-      render 'edit_profile'
     else
-      render 'edit_profile'
+      if us_params['password'] != us_params['password_confirmation']
+        flash[:success] = "Your password and it's checking must be identical"
+      end
     end
-
+    if @user.password == us_params['confirm_edit_pass']
+      us_params.delete 'confirm_edit_pass'
+      if @user.update_attributes(us_params)
+        flash[:success] = "Profile updated"
+        redirect_to edit_profile_path
+      else
+        redirect_to edit_profile_path
+      end
+    else
+      flash[:success] = "wrong password"
+      redirect_to edit_profile_path
+    end
   end
 
   private
+
+  def user_edit_params
+    params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :confirm_edit_pass, :avatar)
+  end
 
   def user_params
     params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :avatar)

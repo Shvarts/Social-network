@@ -4,6 +4,9 @@
     %ul
       - @user.errors.full_messages.each do |msg|
         %li= msg
+-if flash[:success].present?
+  .edit_profile_flash
+    =flash[:success]
 = form_for @user do |f|
   %p
     = f.label :Name
@@ -14,13 +17,9 @@
     %br
     = f.text_field :lastname
   %p
-    = f.label :Email
+    = f.label :New_Password
     %br
-    = f.email_field :email
-  %p
-    = f.label :Password
-    %br
-    = f.password_field :password
+      = f.password_field :password, value:''
   %p
     = f.label :Password_confirmation
     %br
@@ -30,4 +29,8 @@
     %br
     = f.file_field :avatar
   %p
-    = f.submit "Sing up"
+    = f.label :Password_for_saving
+    %br
+    = f.password_field :confirm_edit_pass, value:''
+  %p
+    = f.submit "Save"
