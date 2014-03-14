@@ -1,3 +1,23 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+###
+Created by vitalik on 14.03.14.
+###
+$(document).ready ->
+  $(".friends").on "click", ->
+    $(".friends_list").slideDown()
+    $(".requested_list").slideUp()
+    $(".pending_list").slideUp()
+    return
+
+  $(".requested").on "click", ->
+    $(".requested_list").slideDown()
+    $(".friends_list").slideUp()
+    $(".pending_list").slideUp()
+    return
+
+  $(".pending").on "click", ->
+    $(".pending_list").slideDown()
+    $(".friends_list").slideUp()
+    $(".requested_list").slideUp()
+    return
+
+  return

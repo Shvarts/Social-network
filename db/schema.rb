@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20140309090443) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "remember_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
@@ -56,6 +58,14 @@ ActiveRecord::Schema.define(version: 20140309090443) do
     t.string   "os_name"
     t.string   "os_version"
     t.integer  "devise_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "walls", force: true do |t|
+    t.string   "post"
+    t.integer  "usr"
+    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
