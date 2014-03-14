@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
 	def create
-		@user = User.create
+		@user = User.create(user_params)
 		if @user.save
 			redirect_to root_path
 		else
@@ -37,8 +37,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     us_params = user_edit_params.to_hash
-    puts(@user.password)
-    puts('-------------------------')
+
     if  us_params['password'].blank?
       us_params.delete 'password'
       us_params.delete 'password_confirmation'
