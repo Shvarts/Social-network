@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+
+
+
+
   validates :firstname, :presence => true,
             :length => {:in => 2..20}
 
@@ -19,6 +23,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200#" }, :default_url => "/assets/missing_avatar.png"
 
   before_save { self.email = email.downcase }
+
+ has_many :services, :dependent => :destroy
   before_create :create_remember_token
   has_many :friendships
   has_many :friends,

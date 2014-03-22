@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309090443) do
+ActiveRecord::Schema.define(version: 20140322124353) do
 
   create_table "friendships", force: true do |t|
     t.integer  "user_id"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 20140309090443) do
     t.datetime "photo_updated_at"
   end
 
+  create_table "services", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "uname"
+    t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -45,8 +55,6 @@ ActiveRecord::Schema.define(version: 20140309090443) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "remember_token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
@@ -58,14 +66,6 @@ ActiveRecord::Schema.define(version: 20140309090443) do
     t.string   "os_name"
     t.string   "os_version"
     t.integer  "devise_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "walls", force: true do |t|
-    t.string   "post"
-    t.integer  "usr"
-    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

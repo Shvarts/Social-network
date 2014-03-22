@@ -5,6 +5,10 @@ gem "rspec-rails"
 end
 
 
+
+gem 'omniauth-facebook','1.3.0'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

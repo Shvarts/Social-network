@@ -32,6 +32,9 @@ SocialNetworc::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   get '/edit_profile', to: 'users#edit_profile'
 
+  match '/auth/facebook/callback' , to: 'services#create', via: [:get,:post]
+  resources :services, :only => [:index,:create]
+
 
 
 end
