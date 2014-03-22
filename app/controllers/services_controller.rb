@@ -23,7 +23,8 @@ class ServicesController < ApplicationController
     elsif service_route == 'twitter'
       render :text => omniauth.to_yaml
 
-    elsif service_route == ':google_oauth2'
+
+    elsif service_route == 'google'
       render :text => omniauth.to_yaml
 
     else
