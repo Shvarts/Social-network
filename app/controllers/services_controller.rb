@@ -6,7 +6,11 @@ class ServicesController < ApplicationController
   def create
     omniauth = request.env['omniauth.auth']
 
-    if omniauth
+    if omniauth && params[:service]
+
+    service_route =params[:service]
+
+    if service_route =='facebook'
 
       omniauth['extra']['raw_info']['email'] ? email = omniauth['extra']['raw_info']['email'] : email = ''
       omniauth['extra']['raw_info']['first_name'] ? first_name = omniauth['extra']['raw_info']['first_name'] : first_name = ''
@@ -16,12 +20,19 @@ class ServicesController < ApplicationController
 
       render :text => uid.to_s + " - " +email+ " - "+first_name + " - "+last_name+ "- "+ provider
 
+    elsif service_route == 'twitter'
+      render :text => omniauth.to_yaml
+
+    elsif service_route == ':google_oauth2'
+      render :text => omniauth.to_yaml
+
     else
+
 
       render :text =>  'Error: omniauth is empty'
     end
 
-
+end
 
   end
 
